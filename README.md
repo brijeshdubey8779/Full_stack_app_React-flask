@@ -1,4 +1,4 @@
-# Project Title
+# A Fll Stack Application using React JS, Flask and MongoDB
 
 ## Description
 
