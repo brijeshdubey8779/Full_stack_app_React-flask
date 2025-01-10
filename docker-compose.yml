@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: backend
+    working_dir: /app/backend
+    environment:
+      MONGODB_URI: "mongodb+srv://brijeshbrd:t7FpvtZTXqCDsbxs@cluster0.jzan7.mongodb.net/sample_mflix?retryWrites=true&w=majority&appName=Cluster0"
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
