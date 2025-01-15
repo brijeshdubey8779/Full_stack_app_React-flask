@@ -8,7 +8,7 @@ export default function Contact() {
                     <form action="https://formbold.com/s/FORM_ID" method="POST">
                         <div className="mb-5">
                             <label
-                                for="name"
+                                htmlFor="name"
                                 className="mb-3 block text-base font-medium text-[#07074D]"
                             >
                                 Full Name
@@ -23,7 +23,7 @@ export default function Contact() {
                         </div>
                         <div className="mb-5">
                             <label
-                                for="email"
+                                htmlFor="email"
                                 className="mb-3 block text-base font-medium text-[#07074D]"
                             >
                                 Email Address
@@ -38,7 +38,7 @@ export default function Contact() {
                         </div>
                         <div className="mb-5">
                             <label
-                                for="subject"
+                                htmlFor="subject"
                                 className="mb-3 block text-base font-medium text-[#07074D]"
                             >
                                 Subject
@@ -53,7 +53,7 @@ export default function Contact() {
                         </div>
                         <div className="mb-5">
                             <label
-                                for="message"
+                                htmlFor="message"
                                 className="mb-3 block text-base font-medium text-[#07074D]"
                             >
                                 Message

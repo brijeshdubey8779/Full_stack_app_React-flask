@@ -8,21 +8,17 @@ import About from './components/About/About.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Contact from './components/Contact/Contact.jsx';
-import BlogPost from './components/Blog/BlogPost.jsx';
-// import User from './components/User/User.jsx';
-// import Github, { githubInfoLoader } from './components/Github/Github.jsx';
+import PatientDetails from './components/Form/Step1/PatientDetails.jsx';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Layout />}>
-            <Route>
-                <Route path="/" element={<Home />} />
-                <Route path="/post/:id" element={<BlogPost />} />
-            </Route>
+            <Route path="/" element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='contact' element={<Contact />} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
+            <Route path='patientdetails' element={<PatientDetails />} />
             {/* <Route
                 loader={githubInfoLoader}
                 path='github'

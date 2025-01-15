@@ -1,28 +1,19 @@
-import { Link } from "react-router-dom";
-
-const blogPosts = [
-    { id: 1, title: "Blog Post 1", excerpt: "This is the first blog post." },
-    { id: 2, title: "Blog Post 2", excerpt: "This is the second blog post." },
-    { id: 3, title: "Blog Post 3", excerpt: "This is the third blog post." },
-];
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Latest Posts</h2>
-            <div className="space-y-4">
-                {blogPosts.map((post) => (
-                    <div key={post.id} className="bg-white p-4 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-semibold text-gray-900">{post.title}</h3>
-                        <p className="text-gray-700 mt-2">{post.excerpt}</p>
-                        <Link to={`/post/${post.id}`} className="text-blue-600 mt-4 inline-block">
-                            Read More
-                        </Link>
-                    </div>
-                ))}
+        <div className='min-h-screen p-0 flex justify-center items-center bg-slate-600'>
+            <div className='max-w-4xl bg-slate-500 h-52 '>
+                <h1 className='text-3xl font-bold text-center'>Welcome, I'm a developer</h1>
+                <p className='text-xl'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis atque in dignissimos beatae, similique molestiae quis veniam id quae maiores est earum eum nam libero illum pariatur. Molestias, repellat voluptates.</p>
+                <div className='flex justify-center '>
+                    <Link to="/patientdetails" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3 rounded'>Get Started</Link>
+                    <Link to="#" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3 rounded'>View Previous</Link>
+                </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home

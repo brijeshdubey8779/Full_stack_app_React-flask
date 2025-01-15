@@ -53,7 +53,7 @@ def login():
 @main.route('/api/delete', methods=['POST'])
 def delete_data():
     
-    mongo.db.users.delete_many({})
+    mongo.db.patients.delete_many({})
     return jsonify({"message": "Data deleted successfully!"})
             
 
@@ -67,4 +67,37 @@ def update_data():
     
     return jsonify({"message": "Data updated successfully!"})
 
-            
+@main.route("/api/patinetdata", methods=["POST"])
+def add_patient_data():
+    data = request.get_json()
+    if data.get('name') == None:
+        return jsonify({"message": "Name is required"}), 400
+    elif data.get('age') == None:
+        return jsonify({"message": "Age is required"}), 400
+    elif data.get('gender') == None:
+        return jsonify({"message": "Gender is required"}), 400
+    elif data.get('mobile') == None:
+        return jsonify({"message": "Mobile number is required"}), 400
+    elif data.get('referred_by') == None:
+        return jsonify({"message": "Referred by doctor name is required"}), 400
+    elif data.get('date_of_collection') == None:
+        return jsonify({"message": "Date of collection of sample is required"}), 400
+    elif data.get('date_of_reported') == None:
+        return jsonify({"message": "Date of reported date is required"}), 400
+    elif data.get('accession_number') == None:
+        return jsonify({"message": "Accesion number is required"}), 400
+    else:
+        mongo.db.patients.insert_one({
+            "name": data['name'],
+            "age": data['age'],
+            "gender": data['gender'],
+            "mobile": data['mobile'],
+            "referred_by": data['referred_by'],
+            "date_of_collection": data['date_of_collection'],
+            "date_of_reported": data['date_of_reported'],
+            "accession_number": data['accession_number']
+            })
+        return jsonify({"message": "Data added successfully!"}), 200
+    return jsonify({"message": "Something went wrong please try again letter."})
+
+    
