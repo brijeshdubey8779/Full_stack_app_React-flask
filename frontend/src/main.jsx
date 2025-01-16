@@ -2,13 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Layout from './Layout.jsx';
-import Home from './components/Home/Home.jsx';
-import About from './components/About/About.jsx';
-import Login from './components/Login/Login.jsx';
-import Register from './components/Register/Register.jsx';
-import Contact from './components/Contact/Contact.jsx';
-import PatientDetails from './components/Form/Step1/PatientDetails.jsx';
+import { Layout, Home, About, Contact, PatientDetails, Login, Register } from './components/index.js';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -19,11 +13,6 @@ const router = createBrowserRouter(
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
             <Route path='patientdetails' element={<PatientDetails />} />
-            {/* <Route
-                loader={githubInfoLoader}
-                path='github'
-                element={<Github />}
-            /> */}
         </Route>
     )
 );
